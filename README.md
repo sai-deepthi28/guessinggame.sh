@@ -1,15 +1,16 @@
 # guessinggame.sh
 echo "enter a value:"
 read $a
-if [ $a -eq 100 ]
+no.of.files=$(ls -l | wc -l)
+ if [ $a -eq $no.of.files ]
 then
 echo " your guess is correct"
-elif [ $a -gt 100 ]
+elif [ $a -gt $no.of.files ]
 then
 echo "your guess is high"
 elif [ $a -lt 100 ]
 then
 echo "your guess is low"
 else
-echo "your are out"
+echo "your guess is correct"
 fi
