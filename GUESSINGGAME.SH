@@ -1,15 +1,19 @@
 # guessinggame.sh
 echo "enter a value:"
-read $a
-no.of.files=$(ls -l | wc -l)
+read a
+function get_file_number {
+	local number=$(ls -l | wc -l)-1
+	echo $number
+}
+files=$(get_file_number)
 #IF CONDITION 
- if [ $a -eq $no.of.files ]
+ if [ $a -eq $get_file_number ]
 then
 echo " your guess is correct"
-elif [ $a -gt $no.of.files ]
+elif [ $a -gt $get_file_number ]
 then
 echo "your guess is high"
-elif [ $a -lt $no.of.files ]
+elif [ $a -lt $get_file_number ]
 then
 echo "your guess is low"
 else
