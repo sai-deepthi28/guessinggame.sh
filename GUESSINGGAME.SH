@@ -6,17 +6,17 @@ function get_file_number {
 	echo $number
 }
 files=$(get_file_number)
-#IF CONDITION 
- if [ $a -eq $get_file_number ]
-then
-echo " your guess is correct"
-elif [ $a -gt $get_file_number ]
-then
-echo "your guess is high"
-elif [ $a -lt $get_file_number ]
-then
-echo "your guess is low"
-else
-echo "CONGRATS"
-fi
-#END OF IF CONDITION
+while [[ $a -ne $files ]]
+do
+	if [[ $a -gt $files ]]
+	then
+		echo "Sorry, your guess was too high..."
+	else 
+		echo "Sorry, your guess was too low..."
+	fi
+	echo
+	echo "Guess again: "
+	read guess
+done
+
+echo "Congratulations! You guessed the right number!"
